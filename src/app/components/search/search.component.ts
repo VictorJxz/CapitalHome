@@ -26,7 +26,7 @@ export class SearchComponent {
       this.dataSearch = params['termino'];
       this.spotifyService.getArtists( params['termino'] ).subscribe( (respose: any) => {
         this.artists = respose;
-        this.loading = true;
+        this.loading = false;
       })
     })
    }

@@ -1,6 +1,13 @@
 
 
-<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+<app-loading *ngIf="loading"></app-loading>
+
+<div *ngIf="error" class="alert alert-danger animated fadeIn">
+  <h3>Error</h3>
+  <p> {{ errorMessage }}</p>
+</div>
+
+<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" >
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
@@ -39,8 +46,9 @@
   </a>
 </div>
 
-<div class="alert alert-primary data" role="alert">
+<div class="alert alert-wigth data" role="alert">
   Lo más nuevo 
 </div>
+<hr>
 
 <app-cards [items]="new_soungs"></app-cards>

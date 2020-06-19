@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 // import 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { DomseguroPipe } from './pipes/domseguro.pipe';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,7 @@ import { MainComponent } from './components/main/main.component';
 import { NoimagePipe } from './pipes/noimage.pipe';
 import { CardsComponent } from './components/cards/cards.component';
 import { LoadingComponent } from './components/loading/loading.component';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { LoadingComponent } from './components/loading/loading.component';
     ArtistComponent,
     MainComponent,
     NoimagePipe,
+    DomseguroPipe,
     CardsComponent,
     LoadingComponent
   ],
