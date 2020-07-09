@@ -4,9 +4,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { HOME_ROUTES } from './components/home/home.routes';
 
+// importar el login
+import { LoginComponent } from './pages/login/login.component';
+
 const routes: Routes = [
   {path: 'home', component: HomeComponent,children: HOME_ROUTES},
-  {path: '**',pathMatch: 'full', redirectTo: 'home'}
+  {path: 'login', component: LoginComponent},
+  {path: '**',pathMatch: 'full', redirectTo: 'login'}
 ];
 
 @NgModule({
