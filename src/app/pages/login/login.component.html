@@ -1,59 +1,49 @@
-
 <!-- ...................            Container REGISTER  ...................  -->
-<div class="container col-md-3 animated fadeIn" style="margin-top: 10%;"  >
+<div class="container col-md-3 animated fadeIn" style="margin-top: 10%;">
 
-    <div class="text-center datax">
-        <img src="assets/img/defcon.jpg"class="auth-img"> 
-        <div class=""><p>Datos de registro</p></div>
+  <div class="text-center datax">
+    <img src="assets/img/banner.png" class="auth-img">
+    <div class="datax">
+      <p>Login</p>
     </div>
-
-    
-    <form (ngSubmit)="onSubmitAuthentication( registerForm )" #registerForm="ngForm">
-        <div class="container">
-            <!-- ................... Validation Name ......................... -->
-            <div class="data">
-                <span *ngIf="registerForm.submitted && registerForm.controls['name'].errors"
-                style="font-size: 10px;color: brown;"
-                class="animated fadeIn">Complete los campos</span>
+  </div>
 
 
-            </div>
+  <form (ngSubmit)="onSubmitAuthentication( registerForm )" #registerForm="ngForm">
+    <div class="container">
 
-             <!-- .............,,,,,,,,...... Validation Email ................. -->
+      <!-- .............,,,,,,,,...... Validation Email ................. -->
 
-             <div class="data">
-                <span *ngIf="registerForm.submitted && registerForm.controls['email'].errors"
-                style="font-size: 10px;color: brown;"
-                class="animated fadeIn">Correo obligatorio</span>
+      <div class="data">
+        <span *ngIf="registerForm.submitted && registerForm.controls['email'].errors"
+          style="font-size: 10px;color: brown;" class="animated fadeIn">Correo obligatorio</span>
 
-               <input placeholder="email" autocomplete="off"
-                [(ngModel)]="userModel.email" class="form-control form-control-sm"
-                 type="text" name="email" required email>
-            </div>
+        <input placeholder="email" autocomplete="off" [(ngModel)]="userModel.email" class="form-control form-control-sm"
+          type="text" name="email" required email>
+      </div>
 
-              <!-- ................... Validation Password ...................... -->
-            <div class="data">
-                <span *ngIf="registerForm.submitted && registerForm.controls['password'].errors"
-                style="font-size: 10px;color: brown;"
-                 class="animated fadeIn">Contraseña al menos 6 caracters #&Aa12</span>
-                 
-               <input placeholder="password" autocomplete="off"
-                [(ngModel)]="userModel.password" class="form-control form-control-sm "
-                  type="password" name="password" minlength="6" required>
+      <!-- ................... Validation Password ...................... -->
+      <div class="data">
+        <span *ngIf="registerForm.submitted && registerForm.controls['password'].errors"
+          style="font-size: 10px;color: brown;" class="animated fadeIn">Contraseña al menos 6 caracters #&Aa12</span>
 
-            </div>
-            
-            <button type="submit" class="btn btn-info btn-sm btn-block datax">
-             <span class=" ">Enviar</span></button>
+        <input placeholder="password" autocomplete="off" [(ngModel)]="userModel.password"
+          class="form-control form-control-sm " type="password" name="password" minlength="6" required>
 
-            <div class="custom-control custom-checkbox mr-sm-2 data">
-              
-              <input type="checkbox" class="custom-control-input" 
-              id="customControlAutosizing" name="remember" [(ngModel)]="remember" >
-              <label class="custom-control-label" for="customControlAutosizing">
-                <small>Mantener sesión / </small></label>
-                <a routerLink="register" class="register"><small>¿No tienes  una cuenta?</small></a>
-            </div>
-             
-          </div> </form>
+      </div>
+
+      <button type="submit" class="btn btn-info btn-sm btn-block datax">
+        <span class="">Enviar</span></button>
+
+      <div class="custom-control custom-checkbox mr-sm-2 data">
+
+        <input type="checkbox" class="custom-control-input" id="customControlAutosizing" name="remember"
+          [(ngModel)]="remember">
+        <label class="custom-control-label" for="customControlAutosizing">
+          <small>Mantener sesión / </small></label>
+        <a [routerLink]="['/register']"><small>¿No tienes una cuenta?</small></a>
+      </div>
+
+    </div>
+  </form>
 </div>

@@ -1,38 +1,34 @@
-
 <nav class="navbar navbar-expand-md navbar-light bg-light">
   <a class="navbar-brand" href="#">
-      <img src="assets/img/banner.png" width="30" height="30" alt="" loading="lazy">
-      Capital Home</a>
+    <img src="assets/img/banner.png" width="30" height="30" alt="" loading="lazy">
+    Capital Home</a>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" 
-  data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-   aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item" routerLinkActive="active" >
+      <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="home">Inicio </a>
       </li>
-      <li class="nav-item" routerLinkActive="active" >
+      <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="home">Recomendaciones </a>
       </li>
-      <li class="nav-item" routerLinkActive="active" >
+      <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="home">Play lists </a>
       </li>
     </ul>
 
     <form class="form-inline">
 
-      <input class="form-control form-control-sm fontx" type="text"
-      (keyup)="dataSearch(buscarTexto.value)"
-      placeholder="Buscar artista..." #buscarTexto>
+      <input class="form-control form-control-sm fontx" type="text" (keyup)="dataSearch(buscarTexto.value)"
+        placeholder="Buscar artista..." #buscarTexto>
 
-      <button class="btn btn-outline-info btn-sm" type="button"
-      (click)="dataSearch(buscarTexto.value)">Buscar</button>
-  </form>
+      <button class="btn btn-outline-info btn-sm" type="button" (click)="dataSearch(buscarTexto.value)">Buscar</button>
+    </form>
   </div>
 </nav>
 

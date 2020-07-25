@@ -19,6 +19,7 @@ import { CardsComponent } from './components/cards/cards.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { from } from 'rxjs';
 import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { LoginComponent } from './pages/login/login.component';
     DomseguroPipe,
     CardsComponent,
     LoadingComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
