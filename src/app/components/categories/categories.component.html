@@ -1,0 +1,17 @@
+
+
+<div class="alert alert-primary" role="alert">
+    Categorias
+  </div>
+
+<div class="card-columns">
+    <div (click)="seeCategory( item )" *ngFor="let item  of new_categories" class="card data animated fadeIn puntero">
+        <img [src]="item.icons[0].url " class="card-img-top" >
+      <div class="card-body">
+        <h5 class="card-title"> {{ item.name  }} </h5>
+        <p class="card-text">
+          <span *ngFor="let artist of item.artists" class="badge badge-light"> {{ item.name }}</span>
+        </p>
+      </div>
+    </div>
+  </div>
