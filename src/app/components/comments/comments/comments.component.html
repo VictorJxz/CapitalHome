@@ -1,0 +1,13 @@
+
+<form (ngSubmit)="setComment( registerForm )" #registerForm="ngForm">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input class="form-control" type="text" placeholder="{{ email}}" >
+
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Nuevo comentario</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="comment"  [(ngModel)]="comment" required></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary btn-block" >Enviar</button>
+</form>

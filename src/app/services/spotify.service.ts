@@ -16,7 +16,7 @@ export class SpotifyService {
 
      const url = `https://api.spotify.com/v1/${ query }`;
      const headers = new HttpHeaders({
-      'Authorization': 'Bearer BQCsJJDy5uJ9tp5BA-ycRUqgqNNr4jAh9en1twBG1YTXbZbd_aUyUoBE1Mtc9TIM5uXCOwtflCHdrdRFA1s'
+      'Authorization': 'Bearer BQC6LFM5kjPL5masa4QwVjM_Uc2a5qgyCGZGivKEO6sNuwJBD3IycAq5UwiCAIB54Em54RyyJ8OR5nQvMY8'
     });
 
     return this.http.get(url, { headers });
@@ -58,4 +58,19 @@ export class SpotifyService {
     return this.getQuery(`browse/categories/${ id }/playlists`)
     .pipe( map( (reponse: any) =>  reponse['playlists']));
    }
+
+   getPlaylistTrack( id: string ) {
+    return this.getQuery(`playlists/${ id }/tracks?limit=20`)
+    .pipe( map( (reponse: any) =>  reponse['items']));
+   }
+
+   getPlaylist( id: string ) {
+    return this.getQuery(`playlists/${ id }`);
+   }
+
+   getFeaturedPy( ) {
+    return this.getQuery(`browse/featured-playlists?limit=20`)
+    .pipe( map( (reponse: any) =>  reponse['playlists']));
+   }
+   
 }

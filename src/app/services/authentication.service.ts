@@ -24,7 +24,7 @@ export class AuthenticationService {
   constructor(private http: HttpClient) { }
 
   logout() {
-
+    localStorage.removeItem('token');
   }
 
   login( user: UserModel) {

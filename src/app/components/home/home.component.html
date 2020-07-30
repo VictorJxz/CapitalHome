@@ -18,7 +18,10 @@
         <a class="nav-link" routerLink="categories">Categorias </a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="home">Play lists </a>
+        <a class="nav-link" routerLink="playlists">Playlists </a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="comments-list">Comentarios </a>
       </li>
     </ul>
 
@@ -29,6 +32,18 @@
 
       <button class="btn btn-outline-info btn-sm" type="button" (click)="dataSearch(buscarTexto.value)">Buscar</button>
     </form>
+    
+    <div class="btn-group" style="margin-left: 10px;">
+      <button type="button" class="btn btn btn-outline-info btn-sm dropdown-toggle dropdown-toggle-split"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="sr-only">Toggle Dropdown</span>
+      </button>
+      <div class="dropdown-menu dropdown-menu-right" style="font-size: 12px;">
+          <a class="dropdown-item" routerLink="/home/licenses">Licencias</a>
+          <div class="dropdown-divider"></div>
+          <button class="dropdown-item" (click)="signOff()">Cerrar sesión</button>
+      </div>
+  </div>
   </div>
 </nav>
 

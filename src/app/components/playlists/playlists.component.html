@@ -1,0 +1,17 @@
+
+
+<div class="alert alert-primary" role="alert">
+    Featured playlist
+  </div>
+
+<div class="card-columns">
+    <div (click)="seePlaylist( item.id )" *ngFor="let item  of playlist" class="card data animated fadeIn puntero">
+        <img [src]="item.images[0].url " class="card-img-top" >
+      <div class="card-body">
+        <h5 class="card-title"> {{ item.name  }} </h5>
+        <p class="card-text">
+          <span *ngFor="let artist of item.artists" class="badge badge-light"> {{ item.name }}</span>
+        </p>
+      </div>
+    </div>
+  </div>

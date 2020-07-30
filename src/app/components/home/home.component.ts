@@ -20,4 +20,9 @@ export class HomeComponent implements OnInit {
    this.router.navigate(['/home/search',termino]);
   }
 
+  signOff(){
+    localStorage.removeItem('token');
+    this.router.navigateByUrl('login');
+  }
+
 }

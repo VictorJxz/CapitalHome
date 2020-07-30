@@ -46,6 +46,7 @@ export class LoginComponent implements OnInit {
       if ( this.remember ) {
         localStorage.setItem('email',this.userModel.email)
       }
+      localStorage.setItem('user',this.userModel.email)
       this.router.navigateByUrl('/home');
 
     }, (err) => {

@@ -1,0 +1,36 @@
+<div class="alert alert-primary" role="alert">
+    Comentarios
+  </div>
+
+<div class="row">
+    <div class="col">
+
+        <div class="card border-primary data"  *ngFor="let item  of comments">
+            <div class="card-body">
+                <h5 class="card-title"> {{ item.email }} </h5>
+
+                <p class="card-text">
+                    {{ item.comment }}
+                </p>
+            </div>
+          </div>
+
+
+    </div>
+    <div class="col-4">
+        <form (ngSubmit)="setComment( registerForm )" #registerForm="ngForm">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input class="form-control" type="text" placeholder="{{ email}}" readonly>
+
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Nuevo comentario</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="comment"
+                    [(ngModel)]="comment" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+        </form>
+    </div>
+
+</div>

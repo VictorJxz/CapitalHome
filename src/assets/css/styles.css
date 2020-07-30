@@ -108,3 +108,10 @@ hr {
 a.register{
   color: blue;
 }
+
+.imgx{
+  
+  width: 100%;
+  margin-left: 10px;
+  border-radius: 1%;
+}

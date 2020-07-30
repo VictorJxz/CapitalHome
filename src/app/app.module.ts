@@ -6,6 +6,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { DomseguroPipe } from './pipes/domseguro.pipe';
 
+// import firebase
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { environment } from '../environments/environment';
+
+import { FirebaseService } from 'src/app/services/firebase.service';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -22,6 +29,11 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { CategoryComponent } from './components/category/category.component';
+import { PlaylistComponent } from './components/playlist/playlist.component';
+import { PlaylistsComponent } from './components/playlists/playlists.component';
+import { CommentsListComponent } from './components/comments/comments-list/comments-list.component';
+import { CommentsComponent } from './components/comments/comments/comments.component';
+import { LicensesComponent } from './components/licenses/licenses.component';
 
 @NgModule({
   declarations: [
@@ -37,16 +49,24 @@ import { CategoryComponent } from './components/category/category.component';
     LoginComponent,
     RegisterComponent,
     CategoriesComponent,
-    CategoryComponent
+    CategoryComponent,
+    PlaylistComponent,
+    PlaylistsComponent,
+    CommentsListComponent,
+    CommentsComponent,
+    LicensesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule
   ],
   providers: [
-    SpotifyService
+    SpotifyService,
+    FirebaseService
   ],
   bootstrap: [AppComponent]
 })

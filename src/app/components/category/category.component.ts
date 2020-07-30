@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute,Router } from '@angular/router';
 import { SpotifyService } from 'src/app/services/spotify.service';
 
 @Component({
@@ -8,32 +8,47 @@ import { SpotifyService } from 'src/app/services/spotify.service';
   templateUrl: './category.component.html',
   styleUrls: ['./category.component.css']
 })
-export class CategoryComponent {
+export class CategoryComponent implements OnInit {
 
   category: any = {};
-  playList: any[] = [];
+  playList: any = {};
+  loading: boolean;
 
-  constructor( private activatedRouter: ActivatedRoute, private spotify: SpotifyService) {
+  constructor(private activatedRouter: ActivatedRoute, private spotify: SpotifyService,
+    private router: Router) {
 
     this.activatedRouter.params.subscribe( params => {
 
+      this.loading = true;
       this.getCategory( params['id'] );
       this.getPlaylist( params['id'] );
 
     });
+
    }
 
-   getCategory( id: string ) {
-     this.spotify.getCategory( id ).subscribe( response => {
-       console.log( response );
-     });
-   }
-   
-   getPlaylist( id: string ) {
-     this.spotify.geCtyPlaylist( id ).subscribe( response => {
-       console.log( response );
-       this.playList = response;
-     });
-   }
+  ngOnInit(): void {
+  }
+
+  getCategory( id: string ) {
+    this.spotify.getCategory( id ).subscribe( response => {
+      console.log( response );
+      this.category = response;
+      this.loading = false;
+    });
+  }
+
+  getPlaylist( id: string ) {
+    this.spotify.geCtyPlaylist( id ).subscribe( response => {
+      console.log( response );
+      this.playList = response;
+
+    });
+  }
+
+  seePlaylist( item ){
+    console.log( item );
+    this.router.navigate(['/home/playlist',item]);
+  }
 
 }
